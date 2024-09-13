@@ -4524,6 +4524,20 @@ definitions:
             }
           }
 
+  TGUDFStorage:
+    description: Storage mount details
+    type: object
+    properties:
+      path:
+        type: string
+        description: mount path
+      size:
+        type: integer
+        description: storage size in bytes
+      storage_class:
+        type: string
+        description: storage class
+
   TGUDFEnvironment:
     description: Metadata about the environment where we want to execute a UDF.
     type: object
@@ -4591,6 +4605,11 @@ definitions:
           allowed to run indefinitely (subject to the server’s global limits).
         type: number
         x-nullable: true
+      paths:
+        description: Mapping for storage paths to mount
+        type: array
+        items:
+          $ref: "#/definitions/TGUDFStorage"
 
   FragmentMetadata:
     description: Fragment Metadata
