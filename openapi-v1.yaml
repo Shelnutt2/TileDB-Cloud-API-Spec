@@ -183,6 +183,8 @@ definitions:
       - python
       # r
       - r
+      # nextflow
+      - nextflow
 
   UDFType:
     description: UDF Type
@@ -194,6 +196,8 @@ definitions:
       - single_array
       # generic
       - generic
+      # bash
+      - bash
 
   ResultFormat:
     description: "Data format of a result"
@@ -4532,8 +4536,10 @@ definitions:
         type: string
         description: mount path
       size:
-        type: integer
         description: storage size in bytes
+        type: number
+        format: uint64
+        example: 1024
       storage_class:
         type: string
         description: storage class
